@@ -1,0 +1,9 @@
+# .streamlit/config.toml: Streamlit settings, read every time you run the app.
+# These two lines let the app work through the codespace's forwarded port,
+# so you no longer need to type them after "streamlit run app.py".
+[server]
+enableCORS = false
+enableXsrfProtection = false
+
+[browser]
+gatherUsageStats = false

@@ -1,0 +1,27 @@
+// devcontainer.json: the recipe for the computer your codespace runs on.
+// GitHub reads this file every time someone creates a codespace from this repo.
+{
+    "name": "Garden App",
+
+    // The starting computer: Linux with Python 3.12 already installed
+    "image": "mcr.microsoft.com/devcontainers/python:3.12",
+
+    // VS Code extensions to install inside the codespace
+    "customizations": {
+        "vscode": {
+            "extensions": ["ms-python.python"]
+        }
+    },
+
+    // Runs ONCE, right after the codespace is created: installs streamlit and pandas
+    "postCreateCommand": "pip install -r requirements.txt",
+
+    // Streamlit serves the app on port 8501. Give it a name and open it in a new browser tab when it starts.
+    "forwardPorts": [8501],
+    "portsAttributes": {
+        "8501": {
+            "label": "Streamlit app",
+            "onAutoForward": "openBrowser"
+        }
+    }
+}
